@@ -6,36 +6,36 @@
 require 'zlib'
 
 module ISOCodes
-  # Version of the ISO 639-3 code set (see
+  # Version of the ISO 639-3 code set supported (see
   # http://www.sil.org/iso639-3/download.asp).
   ISO_639_3_VERSION = '20100330'
 
-  # Version of the ISO 639-3 macrolanguage mappings (see
+  # Version of the ISO 639-3 macrolanguage mappings supported (see
   # http://www.sil.org/iso639-3/download.asp).
   ISO_639_3_MACROLANGUAGE_MAPPINGS_VERSION = '20100128'
 
   class Language
-    # Returns the ISO 639-3 identifier.
+    # ISO 639-3 identifier for the language, or +nil+ if none is defined.
     attr_reader :identifier
 
-    # Returns the equivalent ISO 639-2 identifier of the bibliographic applications code set, or
-    # +nil+ if none is defined.
+    # ISO 639-2 identifier of the bibliographic applications code set for
+    # the language, or +nil+ if none is defined.
     attr_reader :alpha3_bibliographic
 
-    # Returns the equivalent ISO 639-2 identifier of the terminology applications code set, or
-    # +nil+ if none is defined.
+    # ISO 639-2 identifier of the terminology applications code set for the
+    # language, or +nil+ if none is defined.
     attr_reader :alpha3_terminology
 
-    # Returns the equivalent ISO 639-1 identifier, or +nil+ if none is defined.
+    # ISO 639-1 identifier for the language, or +nil+ if none is defined.
     attr_reader :alpha2
 
-    # Returns the language type. Language type is either <tt>:living</tt>,
-    # <tt>:extinct</tt>, <tt>:ancient</tt>, <tt>:historic</tt>,
-    # <tt>:constructed</tt>, or <tt>:special</tt>. See http://www.sil.org/iso639-3/types.asp
-    # for a description of these.
+    # Language type for the language. Language type is either
+    # <tt>:living</tt>, <tt>:extinct</tt>, <tt>:ancient</tt>,
+    # <tt>:historic</tt>, <tt>:constructed</tt>, or <tt>:special</tt>. See
+    # http://www.sil.org/iso639-3/types.asp for a description.
     attr_reader :language_type
 
-    # Returns the reference language name.
+    # Reference name for the language.
     attr_reader :reference_name
 
     def initialize(identifier, part2b, part2t, part1, language_type, ref_name)
@@ -56,8 +56,8 @@ module ISOCodes
       @macrolanguage = macrolanguage
     end
 
-    # Returns the macrolanguage it is part of or +nil+ if not part of any
-    # macrolanguage.
+    # Returns the macrolanguage the language belongs to or +nil+ if not
+    # part of any macrolanguage.
     def macrolanguage
       ISOCodes::find_iso_639_3_language(@macrolanguage)
     end
@@ -71,7 +71,8 @@ module ISOCodes
       @individual_languages = individual_languages
     end
 
-    # Returns an array of individual languages, otherwise an empty array.
+    # Returns an array of individual languages or an empty array if no
+    # individual languages are defined.
     def individual_languages
       @individual_languages.map { |c| ISOCodes::find_iso_639_3_language(c) }
     end
@@ -79,13 +80,13 @@ module ISOCodes
 
   class << self
     # Returns an object describing the language identified by the language
-    # code.
+    # code +code+.
     def find_language(code)
       find_iso_639_3_language(code)
     end
 
-    # Returns an object describing the language identified by an ISO 639-3
-    # identifier.
+    # Returns an object describing the language identified by the ISO 639-3
+    # identifier +code+.
     def find_iso_639_3_language(code)
       if @@iso_639_3.has_key?(code)
         klass, *rest = @@iso_639_3[code]
