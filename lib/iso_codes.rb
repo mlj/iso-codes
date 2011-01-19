@@ -1,14 +1,14 @@
 #
 # iso_codes.rb - A comprehensive database of ISO codes
 #
-# Written by Marius L. Jøhndal, 2008, 2010.
+# Written by Marius L. Jøhndal, 2008, 2010, 2011.
 #
 require 'zlib'
 
 module ISOCodes
   # Version of the ISO 639-3 code set supported (see
   # http://www.sil.org/iso639-3/download.asp).
-  ISO_639_3_VERSION = '20100330'
+  ISO_639_3_VERSION = '20100707'
 
   # Version of the ISO 639-3 macrolanguage mappings supported (see
   # http://www.sil.org/iso639-3/download.asp).
