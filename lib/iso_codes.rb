@@ -99,15 +99,6 @@ module ISOCodes
 
   private
 
-  LANGUAGE_TYPES = {
-    'L' => :living,
-    'E' => :extinct,
-    'A' => :ancient,
-    'H' => :historic,
-    'C' => :constructed,
-    'S' => :special,
-  }.freeze
-
   DATA_PATH = File.expand_path(File.dirname(__FILE__))
 
   class << self
@@ -115,7 +106,7 @@ module ISOCodes
       File.join(DATA_PATH, filename)
     end
 
-    def read_data_file(filename, field_count, delimiter = /,\s*/, skip_first = false)
+    def read_data_file(filename, field_count, delimiter, skip_first)
       Zlib::GzipReader.open(get_data_filename(filename)).each_line do |l|
         if skip_first
           skip_first = false
@@ -136,16 +127,26 @@ module ISOCodes
         raise ArgumentError, "missing identifier" if identifier.nil?
         raise ArgumentError, "missing reference name" if ref_name.nil?
 
-        case scope
-        when 'I': klass = IndividualLanguage
-        when 'M': klass = Macrolanguage
-        when 'S': klass = nil # FIXME
-        else
-          raise ArgumentError, "invalid scope"
-        end
+        klass =
+          case scope
+          when 'I': IndividualLanguage
+          when 'M': Macrolanguage
+          when 'S': nil # FIXME
+          else
+            raise ArgumentError, "invalid scope"
+          end
 
-        language_type = LANGUAGE_TYPES[language_type]
-        raise ArgumentError, "invalid language type" if language_type.nil?
+        language_type =
+          case language_type
+          when 'L': :living
+          when 'E': :extinct
+          when 'A': :ancient
+          when 'H': :historic
+          when 'C': :constructed
+          when 'S': :special
+          else
+            raise ArgumentError, "invalid language type"
+          end
 
         data[identifier] = [klass, nil, nil, identifier, part2b, part2t, part1, language_type, ref_name]
       end

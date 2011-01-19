@@ -68,6 +68,6 @@ For an individual language the macrolanguage, if any, can be found.
 If you feel like implementing any of this, please fork the project on
 github.
 
-= Copyright
+== Copyright
 
-Copyright (c) 2010 Marius L. Jøhndal.
+Copyright (c) 2010, 2011 Marius L. Jøhndal.
