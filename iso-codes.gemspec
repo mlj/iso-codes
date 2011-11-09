@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{iso-codes}
-  s.version = "0.2.0"
+  s.name = "iso-codes"
+  s.version = "0.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Marius L. J\303\270hndal"]
-  s.date = %q{2011-01-19}
-  s.description = %q{A database of ISO language and script codes.}
-  s.email = %q{mariuslj (at) ifi [dot] uio (dot) no}
+  s.date = "2011-11-09"
+  s.description = "A database of ISO language and script codes."
+  s.email = "mariuslj (at) ifi [dot] uio (dot) no"
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
@@ -22,21 +22,17 @@ Gem::Specification.new do |s|
     "VERSION",
     "iso-codes.gemspec",
     "lib/iso-639-3-macrolanguages_20100128.tab.gz",
-    "lib/iso-639-3_20100707.tab.gz",
+    "lib/iso-639-3_20110525.tab.gz",
     "lib/iso_codes.rb",
     "test/test_iso_codes.rb"
   ]
-  s.homepage = %q{http://github.com/mlj/iso-codes}
+  s.homepage = "http://github.com/mlj/iso-codes"
   s.require_paths = ["lib"]
-  s.rubyforge_project = %q{iso-codes}
-  s.rubygems_version = %q{1.3.7}
-  s.summary = %q{ISO language and script code support}
-  s.test_files = [
-    "test/test_iso_codes.rb"
-  ]
+  s.rubyforge_project = "iso-codes"
+  s.rubygems_version = "1.8.11"
+  s.summary = "ISO language and script code support"
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
