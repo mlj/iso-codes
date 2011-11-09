@@ -1,6 +1,4 @@
-require 'rubygems'
-require 'rake'
-
+# encoding: utf-8
 begin
   require 'jeweler'
 

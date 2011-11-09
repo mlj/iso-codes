@@ -8,7 +8,7 @@ require 'zlib'
 module ISOCodes
   # Version of the ISO 639-3 code set supported (see
   # http://www.sil.org/iso639-3/download.asp).
-  ISO_639_3_VERSION = '20100707'
+  ISO_639_3_VERSION = '20110525'
 
   # Version of the ISO 639-3 macrolanguage mappings supported (see
   # http://www.sil.org/iso639-3/download.asp).
@@ -79,6 +79,11 @@ module ISOCodes
   end
 
   class << self
+    # Returns an array containing all ISO 639-3 language codes.
+    def all_iso_639_3_codes
+      @@iso_639_3.keys
+    end
+
     # Returns an object describing the language identified by the language
     # code +code+.
     def find_language(code)
