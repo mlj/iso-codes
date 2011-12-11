@@ -134,21 +134,30 @@ module ISOCodes
 
         klass =
           case scope
-          when 'I': IndividualLanguage
-          when 'M': Macrolanguage
-          when 'S': nil # FIXME
+          when 'I'
+            IndividualLanguage
+          when 'M'
+            Macrolanguage
+          when 'S'
+            nil
           else
             raise ArgumentError, "invalid scope"
           end
 
         language_type =
           case language_type
-          when 'L': :living
-          when 'E': :extinct
-          when 'A': :ancient
-          when 'H': :historic
-          when 'C': :constructed
-          when 'S': :special
+          when 'L'
+            :living
+          when 'E'
+            :extinct
+          when 'A'
+            :ancient
+          when 'H'
+            :historic
+          when 'C'
+            :constructed
+          when 'S'
+            :special
           else
             raise ArgumentError, "invalid language type"
           end
@@ -160,8 +169,9 @@ module ISOCodes
         macrolanguage_identifier, individual_language_identifier, status = args
 
         case status
-        when 'R': next #FIXME
-        when 'A':
+        when 'R'
+          next #FIXME
+        when 'A'
         else
           raise ArgumentError, "invalid status"
         end
