@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "iso-codes"
-  s.version = "0.2.1"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Marius L. J\303\270hndal"]
-  s.date = "2011-11-09"
+  s.date = "2011-12-11"
   s.description = "A database of ISO language and script codes."
   s.email = "mariuslj (at) ifi [dot] uio (dot) no"
   s.extra_rdoc_files = [
