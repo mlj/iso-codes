@@ -32,4 +32,14 @@ class ISO6393CodesTestCase < Test::Unit::TestCase
     assert_equal ISOCodes::IndividualLanguage, language.class
     assert_equal "lav", language.macrolanguage.identifier
   end
+
+  def test_all_language_instantiation
+    ISOCodes.all_iso_639_3_codes.each do |l|
+      assert_not_nil l
+
+      k = ISOCodes::find_language(l)
+      assert_not_nil k
+      assert_kind_of ISOCodes::Language, k
+    end
+  end
 end

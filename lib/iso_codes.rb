@@ -48,11 +48,21 @@ module ISOCodes
     end
   end
 
+  class SpecialSituationLanguage < Language
+    def initialize(individual_languages, macrolanguage, *rest)
+      super(*rest)
+
+      raise ArgumentError, "macrolanguage given for special situation language" if macrolanguage
+      raise ArgumentError, "individual languages given for special situation language" if individual_languages
+    end
+  end
+
   class IndividualLanguage < Language
     def initialize(individual_languages, macrolanguage, *rest)
       super(*rest)
 
-      raise "Individual languages given for individual language" if individual_languages # FIXME
+      raise ArgumentError, "individual languages given for individual language" if individual_languages
+
       @macrolanguage = macrolanguage
     end
 
@@ -67,7 +77,8 @@ module ISOCodes
     def initialize(individual_languages, macrolanguage, *rest)
       super(*rest)
 
-      raise "Macrolanguage given for macrolanguage" if macrolanguage # FIXME
+      raise ArgumentError, "macrolanguage given for macrolanguage" if macrolanguage
+
       @individual_languages = individual_languages
     end
 
@@ -139,7 +150,7 @@ module ISOCodes
           when 'M'
             Macrolanguage
           when 'S'
-            nil
+            SpecialSituationLanguage
           else
             raise ArgumentError, "invalid scope"
           end
