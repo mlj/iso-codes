@@ -12,12 +12,10 @@ Gem::Specification.new do |s|
   s.date = "2012-01-26"
   s.description = "A database of ISO language and script codes."
   s.email = "mariuslj (at) ifi [dot] uio (dot) no"
-  s.extra_rdoc_files = [
-    "README.rdoc"
-  ]
   s.files = [
     "CHANGELOG",
-    "README.rdoc",
+    "README.md",
+    "LICENSE",
     "Rakefile",
     "VERSION",
     "iso-codes.gemspec",
