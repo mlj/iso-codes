@@ -1,9 +1,5 @@
-#
-# iso_codes.rb - A comprehensive database of ISO codes
-#
-# Written by Marius L. Jøhndal, 2008, 2010, 2011.
-#
 require 'zlib'
+require 'iso_codes/version'
 
 module ISOCodes
   # Version of the ISO 639-3 code set supported (see
