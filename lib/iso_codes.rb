@@ -4,11 +4,11 @@ require 'iso_codes/version'
 module ISOCodes
   # Version of the ISO 639-3 code set supported (see
   # http://www.sil.org/iso639-3/download.asp).
-  ISO_639_3_VERSION = '20110525'
+  ISO_639_3_VERSION = '20130531'
 
   # Version of the ISO 639-3 macrolanguage mappings supported (see
   # http://www.sil.org/iso639-3/download.asp).
-  ISO_639_3_MACROLANGUAGE_MAPPINGS_VERSION = '20100128'
+  ISO_639_3_MACROLANGUAGE_MAPPINGS_VERSION = '20130314'
 
   class Language
     # ISO 639-3 identifier for the language, or +nil+ if none is defined.

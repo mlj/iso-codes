@@ -1,5 +1,7 @@
 # Changelog
 
+* Upgraded language tables to 20130531 (languages) and 20130314 (macrolanguages)
+
 ## 0.4.0
 
 * Support for 'special situation' codes
