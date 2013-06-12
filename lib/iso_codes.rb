@@ -133,7 +133,7 @@ module ISOCodes
       data = {}
 
       read_data_file("iso-639-3_#{ISO_639_3_VERSION}.tab.gz", 8, "\t", true) do |args|
-        identifier, part2b, part2t, part1, scope, language_type, ref_name, comment = args
+        identifier, part2b, part2t, part1, scope, language_type, ref_name, _ = args
 
         # Sanity checks
         raise ArgumentError, "missing identifier" if identifier.nil?
