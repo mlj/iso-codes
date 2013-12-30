@@ -16,7 +16,6 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/mlj/iso-codes"
   s.licenses = ['MIT']
   s.name = "iso-codes"
-  s.version = "0.4.0"
   s.require_paths = ["lib"]
   s.required_rubygems_version = '>= 1.3.5'
   s.test_files += Dir.glob("test/*")
