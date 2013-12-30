@@ -2,13 +2,11 @@ require 'zlib'
 require 'iso_codes/version'
 
 module ISOCodes
-  # Version of the ISO 639-3 code set supported (see
-  # http://www.sil.org/iso639-3/download.asp).
+  # Version of the ISO 639-3 code set supported.
   ISO_639_3_VERSION = '20130531'
 
-  # Version of the ISO 639-3 macrolanguage mappings supported (see
-  # http://www.sil.org/iso639-3/download.asp).
-  ISO_639_3_MACROLANGUAGE_MAPPINGS_VERSION = '20130314'
+  # Version of the ISO 639-3 macrolanguage mappings supported.
+  ISO_639_3_MACROLANGUAGE_MAPPINGS_VERSION = '20130531'
 
   class Language
     # ISO 639-3 identifier for the language, or +nil+ if none is defined.
@@ -132,7 +130,7 @@ module ISOCodes
     def load_iso_639_3
       data = {}
 
-      read_data_file("iso-639-3_#{ISO_639_3_VERSION}.tab.gz", 8, "\t", true) do |args|
+      read_data_file("iso-639-3.tab.gz", 8, "\t", true) do |args|
         identifier, part2b, part2t, part1, scope, language_type, ref_name, _ = args
 
         # Sanity checks
@@ -172,7 +170,7 @@ module ISOCodes
         data[identifier] = [klass, nil, nil, identifier, part2b, part2t, part1, language_type, ref_name]
       end
 
-      read_data_file("iso-639-3-macrolanguages_#{ISO_639_3_MACROLANGUAGE_MAPPINGS_VERSION}.tab.gz", 3, "\t", true) do |args|
+      read_data_file("iso-639-3-macrolanguages.tab.gz", 3, "\t", true) do |args|
         macrolanguage_identifier, individual_language_identifier, status = args
 
         case status
