@@ -1,4 +1,3 @@
-require 'zlib'
 require 'iso_codes/version'
 
 module ISOCodes
@@ -117,7 +116,7 @@ module ISOCodes
     end
 
     def read_data_file(filename, field_count, delimiter, skip_first)
-      Zlib::GzipReader.open(get_data_filename(filename)).each_line do |l|
+      File.open(get_data_filename(filename)).each_line do |l|
         if skip_first
           skip_first = false
           next
@@ -130,7 +129,7 @@ module ISOCodes
     def load_iso_639_3
       data = {}
 
-      read_data_file("iso-639-3.tab.gz", 8, "\t", true) do |args|
+      read_data_file("iso-639-3.tab.txt", 8, "\t", true) do |args|
         identifier, part2b, part2t, part1, scope, language_type, ref_name, _ = args
 
         # Sanity checks
@@ -170,7 +169,7 @@ module ISOCodes
         data[identifier] = [klass, nil, nil, identifier, part2b, part2t, part1, language_type, ref_name]
       end
 
-      read_data_file("iso-639-3-macrolanguages.tab.gz", 3, "\t", true) do |args|
+      read_data_file("iso-639-3-macrolanguages.tab.txt", 3, "\t", true) do |args|
         macrolanguage_identifier, individual_language_identifier, status = args
 
         case status
