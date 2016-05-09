@@ -20,4 +20,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = '>= 1.3.5'
   s.test_files += Dir.glob("test/*")
   s.version = ISOCodes::VERSION
+
+  s.add_development_dependency 'rspec', '~> 3.2'
+  s.add_development_dependency 'simplecov', '~> 0.10'
 end
