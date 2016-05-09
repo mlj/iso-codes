@@ -1,6 +1,12 @@
 # Changelog
 
-* Upgraded language tables to 20130531 (languages) and 20130314 (macrolanguages)
+## 1.0.0
+
+* Upgraded language tables to 20160115.
+
+* Fixed behaviour of alpha2, alpha3_bibliographic and alpha3_terminology
+  accessors. These now behave as the documentation says they should. (This
+  change breaks backwards compatibility.)
 
 ## 0.4.0
 
