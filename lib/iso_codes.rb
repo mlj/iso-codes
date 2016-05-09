@@ -33,9 +33,9 @@ module ISOCodes
 
     def initialize(identifier, part2b, part2t, part1, language_type, ref_name)
       @identifier = identifier
-      @alpha3_bibliographic = part2b
-      @alpha3_terminology = part2t
-      @alpha2 = part1
+      @alpha3_bibliographic = part2b == '' ? nil : part2b
+      @alpha3_terminology = part2t == '' ? nil : part2t
+      @alpha2 = part1 == '' ? nil : part1
       @language_type = language_type
       @reference_name = ref_name
     end
