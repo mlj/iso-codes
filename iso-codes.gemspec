@@ -21,6 +21,8 @@ Gem::Specification.new do |s|
   s.test_files += Dir.glob("test/*")
   s.version = ISOCodes::VERSION
 
+  s.add_development_dependency 'rake', '~> 10.0'
+  s.add_development_dependency 'yard', '~> 0.8.7'
   s.add_development_dependency 'rspec', '~> 3.2'
   s.add_development_dependency 'simplecov', '~> 0.10'
 end
