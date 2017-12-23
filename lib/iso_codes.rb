@@ -5,7 +5,7 @@ module ISOCodes
   ISO_639_3_VERSION = '20170202'
 
   # Version of the ISO 639-3 macrolanguage mappings supported.
-  ISO_639_3_MACROLANGUAGE_MAPPINGS_VERSION = '20130531'
+  ISO_639_3_MACROLANGUAGE_MAPPINGS_VERSION = '20170131'
 
   class Language
     # ISO 639-3 identifier for the language, or +nil+ if none is defined.
