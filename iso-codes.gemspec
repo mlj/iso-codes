@@ -16,10 +16,10 @@ Gem::Specification.new do |spec|
   spec.files         = Dir["{bin,lib}/**/*"] + %w(README.md LICENSE.md CHANGELOG.md)
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency 'rake', '~> 10.0'
-  spec.add_development_dependency 'yard', '~> 0.8.7'
-  spec.add_development_dependency 'rspec', '~> 3.2'
-  spec.add_development_dependency 'simplecov', '~> 0.10'
-  spec.add_development_dependency 'pry', '~> 0.10'
-  spec.add_development_dependency 'bundler', '~> 1.0'
+  spec.add_development_dependency 'rake', '~> 12.3'
+  spec.add_development_dependency 'yard', '~> 0.9'
+  spec.add_development_dependency 'rspec', '~> 3.7'
+  spec.add_development_dependency 'simplecov', '~> 0.15'
+  spec.add_development_dependency 'pry', '~> 0.11'
+  spec.add_development_dependency 'bundler', '~> 1.16'
 end
