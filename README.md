@@ -68,6 +68,6 @@ MIT
 
 ## Copyright
 
-Copyright (c) 2010-2017 Marius L. Jøhndal.
+Copyright (c) 2010-2019 Marius L. Jøhndal.
 
 [1]: http://www.sil.org/iso639-3/scope.asp#M "Explanation of macrolanguages"
