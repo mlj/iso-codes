@@ -1,6 +1,0 @@
-#!/usr/bin/env ruby
-require 'bundler/setup'
-require 'iso_codes'
-
-require 'pry'
-Pry.start
