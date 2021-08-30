@@ -4,7 +4,9 @@ A comprehensive database of ISO language codes and ISO script codes for Ruby.
 
 ## Installation
 
-    gem install iso-codes
+```shell
+gem install iso-codes
+```
 
 ## Usage
 
@@ -30,8 +32,7 @@ language.alpha3_terminology
 ISO 639-3 defines language identifiers that covers a set of other language
 identifiers. For example, the identifier `lav` for Latvian corresponds to `lvs`
 for Standard Latvian and `ltg` for Latgalian. These identifiers are called
-[macrolanguages] [1] and can be looked up in the same way as other language
-codes:
+macrolanguages and can be looked up in the same way as other language codes:
 
 ```ruby
 language = ISOCodes.find_language('lav')
@@ -68,6 +69,4 @@ MIT
 
 ## Copyright
 
-Copyright (c) 2010-2019 Marius L. Jøhndal.
-
-[1]: http://www.sil.org/iso639-3/scope.asp#M "Explanation of macrolanguages"
+Copyright (c) 2010-2021 Marius L. Jøhndal.
