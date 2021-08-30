@@ -110,7 +110,7 @@ describe ISOCodes do
     expect(l).to_not be_nil
     expect(l.identifier).to eql('ara')
     expect(l).to be_a(ISOCodes::Macrolanguage)
-    expect(l.individual_languages.map(&:identifier)).to eq %w(aao abh abv acm acq acw acx acy adf aeb aec afb ajp apc apd arb arq ars ary arz auz avl ayh ayl ayn ayp bbz pga shu ssh)
+    expect(l.individual_languages.map(&:identifier)).to eq %w(aao abh abv acm acq acw acx acy adf aeb aec afb ajp apc apd arb arq ars ary arz auz avl ayh ayl ayn ayp pga shu ssh)
 
     l = ISOCodes.find_language('lav')
 
