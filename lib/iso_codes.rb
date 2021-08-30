@@ -2,10 +2,10 @@ require 'iso_codes/version'
 
 module ISOCodes
   # Version of the ISO 639-3 code set supported.
-  ISO_639_3_VERSION = '20170202'
+  ISO_639_3_VERSION = '20210218'
 
   # Version of the ISO 639-3 macrolanguage mappings supported.
-  ISO_639_3_MACROLANGUAGE_MAPPINGS_VERSION = '20170131'
+  ISO_639_3_MACROLANGUAGE_MAPPINGS_VERSION = '20210218'
 
   class Language
     # ISO 639-3 identifier for the language, or +nil+ if none is defined.
