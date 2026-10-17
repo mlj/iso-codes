@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "http://github.com/mlj/iso-codes"
   spec.license       = 'MIT'
 
-  spec.files         = Dir["{bin,lib}/**/*"] + %w(README.md LICENSE.md CHANGELOG.md)
+  spec.files         = Dir["{bin,lib}/**/*"] + %w(README.md LICENSE.md)
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency 'rake'
