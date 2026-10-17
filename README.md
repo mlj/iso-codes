@@ -1,5 +1,7 @@
 # iso-codes
 
+NOTE: iso-codes is, as of October 2026, no longer maintained.
+
 A comprehensive database of ISO language codes and ISO script codes for Ruby.
 
 ## Installation
